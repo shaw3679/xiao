@@ -1,0 +1,192 @@
+:root {
+    --primary: #2c3e50;
+    --secondary: #3498db;
+    --accent: #e74c3c;
+    --light: #ecf0f1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+    line-height: 1.8;
+    color: #333;
+    background: var(--light);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+/* 头部样式 */
+.header {
+    text-align: center;
+    padding: 4rem 0;
+    background: var(--primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.contact-bar {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 1.5rem;
+    flex-wrap: wrap;
+}
+
+/* 时间线样式 */
+.timeline {
+    position: relative;
+    padding-left: 3rem;
+    margin: 2rem 0;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 0;
+    width: 2px;
+    height: 100%;
+    background: var(--secondary);
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 2.5rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.3rem;
+    top: 1.5rem;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--accent);
+    border: 3px solid var(--secondary);
+}
+
+/* 项目展示 */
+.project-card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 2rem;
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.tech-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+.tech-item {
+    background: var(--secondary);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+}
+
+/* 技能图表 */
+.skill-meter {
+    height: 12px;
+    background: #ddd;
+    border-radius: 10px;
+    margin: 1rem 0;
+}
+
+.skill-progress {
+    height: 100%;
+    background: var(--secondary);
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .project-card {
+        grid-template-columns: 1fr;
+    }
+    
+    .timeline {
+        padding-left: 1.5rem;
+    }
+}
+/* 统一卡片样式 */
+.skill-card, .award-card, .profile-card {
+background: white;
+padding: 2rem;
+border-radius: 8px;
+box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+margin: 1.5rem 0;
+}
+
+/* 网格布局 */
+.skills-grid, .awards-grid {
+display: grid;
+grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+gap: 2rem;
+}
+
+/* 技能列表样式 */
+.skill-list {
+padding-left: 1.5rem;
+margin-top: 1rem;
+}
+
+.skill-list li {
+margin: 0.5rem 0;
+color: var(--primary);
+}
+
+/* 奖项元信息 */
+.award-meta {
+display: flex;
+justify-content: space-between;
+margin: 1rem 0;
+}
+
+.award-badge {
+background: var(--accent);
+color: white;
+padding: 0.3rem 1rem;
+border-radius: 20px;
+font-size: 0.9rem;
+}
+
+/* 专业简介 */
+.profile-card {
+line-height: 1.8;
+font-size: 1.05rem;
+}
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+.skills-grid, .awards-grid {
+grid-template-columns: 1fr;
+}
+
+.award-meta {
+flex-direction: column;
+gap: 0.5rem;
+}
+}
